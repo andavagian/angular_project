@@ -1,0 +1,13 @@
+{
+  "name": "cms-angular19-root",
+  "version": "1.0.0",
+  "scripts": {
+    "ng": "npm --prefix ./config run ng --",
+    "start": "npm --prefix ./config run start",
+    "build": "npm --prefix ./config run build",
+    "watch": "npm --prefix ./config run watch",
+    "test": "npm --prefix ./config run test"
+  },
+  "private": true,
+  "packageManager": "npm@10.8.2"
+}

@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button routerLink="/home">
+      <mat-icon>article</mat-icon>
+      JS Tech Blog
+    </button>
+
+    <span class="spacer"></span>
+
+    @for (menu of menusList; track menu.id) {
+      <button mat-button [routerLink]="['/home/pages', menu.url]">
+        {{ menu.title }}
+      </button>
+    }
+
+    <button mat-button routerLink="/home/article">Pro Blog</button>
+
+    @if (!user) {
+      <button mat-button (click)="authService.loginWithGoogle()">
+        <mat-icon>login</mat-icon>
+        Login
+      </button>
+    }
+
+    @if (user) {
+      <button mat-button [matMenuTriggerFor]="userMenu">
+        <mat-icon>account_circle</mat-icon>
+        {{ user.displayName }}
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item disabled>
+          <mat-icon>settings</mat-icon>
+          Account Settings
+        </button>
+        @if (user.roles.admin) {
+          <button mat-menu-item routerLink="/admin">
+            <mat-icon>admin_panel_settings</mat-icon>
+            Admin Panel
+          </button>
+        }
+        <button mat-menu-item (click)="authService.logout()">
+          <mat-icon>logout</mat-icon>
+          Log out
+        </button>
+      </mat-menu>
+    }
+  </mat-toolbar-row>
+</mat-toolbar>

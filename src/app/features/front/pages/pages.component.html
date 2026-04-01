@@ -1,0 +1,28 @@
+<div class="pages-container">
+  @if (postsList.length === 0) {
+    <div class="empty">
+      <h2>No posts found for this category.</h2>
+    </div>
+  }
+  <div class="cards">
+    @for (post of postsList; track post.id) {
+      <mat-card class="post-card">
+        <mat-card-header>
+          <mat-card-title>{{ post.title }}</mat-card-title>
+          <mat-card-subtitle>Post content</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p [innerHTML]="post.content"></p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-icon-button color="primary">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-icon-button color="warn">
+            <mat-icon>share</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+</div>

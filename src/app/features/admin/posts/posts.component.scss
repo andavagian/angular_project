@@ -1,0 +1,42 @@
+.posts-container {
+  padding: 32px;
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    color: #3f51b5;
+  }
+}
+
+.add-form {
+  margin-bottom: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+  form {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.table-container {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.filter-row {
+  padding: 16px 24px;
+}
+
+table {
+  width: 100%;
+}
